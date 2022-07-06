@@ -1,3 +1,4 @@
+// FUNCION ADMIN
 const checkstatus = (req,res,next) =>{
     const rol = req.body.rol
     if(rol == 'admin'){

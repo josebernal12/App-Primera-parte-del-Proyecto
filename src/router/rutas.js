@@ -1,6 +1,7 @@
+// CONFIGURATION 
 const {Router} = require('express')
 const router = Router()
-const {getProductos,getIdProductos,postProductos, putProductos,deleteProducto,postCarrito,getCarritos,postIdCarrito} = require('../controllers/controller')
+const {getProductos,getIdProductos,postProductos, putProductos,deleteProducto,postCarrito,getCarritos,postIdCarrito,DeleteCarrito,deleteIdCarrito} = require('../controllers/controller')
 const {checkstatus} = require('../checkroles/rol')
 
 
@@ -13,11 +14,11 @@ router.delete('/productos/:id',checkstatus,deleteProducto)
 
 // ROUTER CARRITO
 router.post('/carrito',postCarrito)
-router.delete('/carrito/:id')
-router.get('/carrito/',getCarritos )
+router.delete('/carrito/:id',DeleteCarrito)
+router.get('/carrito',getCarritos )
 router.post('/carrito/:id',postIdCarrito)
-router.delete('/carrito/:id/:id')
+router.delete('/carrito/:id/:id',deleteIdCarrito)
 
 
-
+// EXPORTAMOS ROUTER
 module.exports = router
