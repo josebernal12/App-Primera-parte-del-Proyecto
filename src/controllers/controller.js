@@ -100,15 +100,20 @@ const postIdCarrito = async(req, res) => {
 }
 const deleteIdCarrito = async (req, res) => {
     const id = req.params.id
-    const idCarrito = req.params.id
+    const idCarrito = req.params.idCarrito
     const productadd = shopping[0].products.findIndex(p => p.id == id)
     const cartIndex = shopping[0].shoppingcart.findIndex(p => p.id == idCarrito)
 
-    shopping[0].shoppingcart[cartIndex].splice[productadd,1]
+  
+    
+      shopping[0].shoppingcart[cartIndex].Productos.splice(productadd,1)
+res.sendStatus(200)
+    }
    
-  res.sendStatus(200)
+   
+  
 
-}
+
 // EXPORTAMOS LAS FUNCIONES
 module.exports = {
     getProductos,
