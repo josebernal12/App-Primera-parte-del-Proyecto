@@ -1,7 +1,8 @@
 // CONFIGURATION 
 const {Router} = require('express')
 const router = Router()
-const {getProductos,getIdProductos,postProductos, putProductos,deleteProducto,postCarrito,getCarritos,postIdCarrito,DeleteCarrito,deleteIdCarrito} = require('../controllers/controller')
+const {getProductos,getIdProductos,postProductos, putProductos,deleteProducto} = require('../controllers/controller')
+const { postCarrito,getCarritos,postIdCarrito,DeleteCarrito,deleteIdCarrito} = require('../controllers/controllerscar')
 const {checkstatus} = require('../checkroles/rol')
 
 
