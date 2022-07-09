@@ -16,9 +16,9 @@ router.delete('/productos/:id',checkstatus,deleteProducto)
 // ROUTER CARRITO
 router.post('/carrito',postCarrito)
 router.delete('/carrito/:id',DeleteCarrito)
-router.get('/carrito/:id',getCarritos )
-router.post('/carrito/:id',postIdCarrito)
-router.delete('/carrito/:id/:id',deleteIdCarrito)
+router.get('/carrito/:id/productos',getCarritos )
+router.post('/carrito/:id/productos/:id_prod',postIdCarrito)
+router.delete('/carrito/:id/productos/:id_prod',deleteIdCarrito)
 
 
 // EXPORTAMOS ROUTER

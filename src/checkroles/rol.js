@@ -1,12 +1,13 @@
 // FUNCION ADMIN
 const checkstatus = (req,res,next) =>{
-    const rol = req.body.rol
-    if(rol == 'admin'){
+    const admin = true
+    if(admin){
        next()
       } else{
-        res.sendStatus(401)
+        res.status(400).send('no eres administrador')
+        }
       }
-}
+
 
 module.exports = {
     checkstatus
