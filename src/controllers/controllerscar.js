@@ -50,7 +50,7 @@ const postIdCarrito = async (req, res) => {
     const checkCart = shoppingcart.some(c => c.id == idCarrito)
     const checkproduct =products.some(c => c.id == id)
      if  (!checkproduct){
-        res.status(400).send(`Lo siento no pudimos encontrar el produdcto`)
+        res.status(400).send(`Lo siento no pudimos encontrar el producto`)
     }
    
    else if (checkCart) {
@@ -68,9 +68,9 @@ const deleteIdCarrito = async (req, res) => {
     const id = req.params.id_prod
     const idCarrito = req.params.id
     const checkCart = shoppingcart.some(c => c.id == idCarrito)
-    const checkproduct =products.some(c => c.id == id)
+    const checkproduct =shoppingcart[0].Productos.some(c => c.id == id)
     if  (!checkproduct){
-       res.status(400).send(`Lo siento no pudimos encontrar el produdcto`)
+       res.status(400).send(`Lo siento no pudimos encontrar el producto`)
    }
     else if (checkCart) {
         const productadd = shoppingcart[0].Productos.findIndex(p => p.id == id)
